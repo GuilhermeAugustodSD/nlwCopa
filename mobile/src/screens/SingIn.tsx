@@ -1,8 +1,20 @@
+import { Center, Text, Icon } from 'native-base'
+import { Fontisto } from '@expo/vector-icons'
 
-import { Center, Text } from 'native-base'
+import Logo from '../assets/logo.svg';
+import { Button } from '../components/Button';
+
+
 
 export function SingIn() {
-  <Center flex={1} bgColor="gray.900" >
-    <Text color="white" fontSize={24}>SingIn</Text>
-  </Center>
+  return (
+    <Center flex={1} bgColor="gray.900" >
+      <Logo width={212} height={40} />
+      <Button
+        title="Entrar com o Google"
+        leftIcon={<Icon as={Fontisto} name='google' color="white" size="md" />}
+        type='SECONDARY'
+      />
+    </Center>
+  )
 }

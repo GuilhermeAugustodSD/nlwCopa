@@ -1,0 +1,25 @@
+import { Button as ButtonNativeBase, Text, IButtonProps } from 'native-base';
+
+interface Props extends IButtonProps {
+ title: String,
+ type?: 'PRIMARY' | 'SECONDARY';
+}
+
+export function Button({ title, type = 'PRIMARY', ...rest }: Props) {
+ return (
+  <ButtonNativeBase {...rest}
+   w='full'
+   h={14}
+   rounded="sm"
+   fontSize="md"
+   textTransform="uppercase"
+   bg={type === 'SECONDARY' ? 'red.500' : 'yellow.500'}
+
+   {...rest}
+  >
+   <Text>
+    {title}
+   </Text>
+  </ButtonNativeBase>
+ )
+}
